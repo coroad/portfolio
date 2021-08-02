@@ -1,0 +1,97 @@
+@charset "utf-8";
+@import url(default.css);
+
+/* Common */
+html,body{
+    width: 100%;
+    background: #f9fafa;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', '나눔고딕', NanumGothic, '맑은 고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+}
+select{
+    border-radius:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+select::-ms-expand{
+    display:none;
+}
+a{
+    color:#141414;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+body .inner{
+    width: 80%; margin: 0 auto; border: 1px red solid;
+}
+.blind{display: none;}
+span{display: block;}
+h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*Plugin*/
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span
+{background: #bbb;}
+
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span
+{background: #333eff;}
+
+.fp-controlArrow.fp-prev,.fp-controlArrow.fp-next
+{border: none; font-size: 40px; font-family: xeicon;} /*font-size로 크기조정*/
+
+.fp-controlArrow.fp-prev::after{content:"\e93b";}
+.fp-controlArrow.fp-next::after{content:"\e93e";}
+.fp-controlArrow.fp-next{margin-right: 45%;}
+.fp-controlArrow.fp-prev{margin-left: 80px;}
+
+
+/*header*/
+header{height: 100px; line-height: 100px;
+    position:fixed; z-index:100;
+    left: 0; right: 0;top: 0; /*화면중앙정렬*/
+    background: #fff;
+}
+header > .inner{display: flex; justify-content: space-between;}
+h1 a{font-weight: 800; font-size: 26px;}
+nav a{font-weight: bold;}
+nav ul{display: flex;}
+nav li{list-style: none; padding: 0 20px;}
+nav li a:hover{color:#333eff;}
+
+/*main1*/
+.main1{width:100%; height:inherit; position:relative; box-sizing: border-box;}
+h2{font-size: 70px; line-height: 0.9; position: absolute; top:26%; left:10%; font-weight:bold;}
+.main1 > h3{position: absolute; top:56%; left:11%;}
+.main1 p{font-size: 16px; position: absolute; top:63%; left:11%; padding:10px 0;}
+.main1 .resume{top:72%; border-radius: 30px; padding:8px 20px; background-color:rgb(241, 151, 72);}
+.resume a{color:#fff; font-weight: 400; height:20px; line-height: 20px;}
+.resume:hover{background-color:#333eff;}
+.main1 img{position:absolute; top:30px; right:-20%; transform: translateY(-50%); z-index: 200; transform: scale(50%);}
+.main1 img::after{content:""; background: url(../images/deco1.png) no-repeat 0 0; z-index: 300;}
+
+/*main3*/
+.main3{position: relative; height:inherit;}
+.pc{width:100%; height:100%; 
+    background: url(../images/service_use_mainbanr_img.png) no-repeat 0 50%;}
+.back{width: 620px; height:390px; overflow: hidden;
+position: absolute; top:50%;transform: translateY(-54%); left:104px;}
+.back img{width: 620px; height:auto; transform:translateY(0%);
+animation: scroll 20s ease-in-out infinite;}
+.back img:hover{animation-play-state: paused;}
+
+@keyframes scroll{
+0%{transform:translateY(0%);}
+100%{transform:translateY(-1482px);}
+
+}
+
+/*footer*/
+footer{background:rgb(241, 151, 72); position:fixed; z-index: 100;
+    width:100%; height:40px; bottom:0; color:#fff; text-align: center;
+    line-height: 40px; font-size: 16px; font-weight: normal;
+}
