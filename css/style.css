@@ -103,9 +103,6 @@ section{
   margin-bottom: var(--mb-4);
   color:var(--text-color);
 }
-.br{
-  display: none;
-}
 
 /* Layout */
 body .inner {
@@ -346,6 +343,11 @@ h2 {
   margin: var(--mb-1) 0 var(--mb-3);
   line-height: var(--mb-3);
 }
+.sub__text{
+  font-size: var(--small-size);
+  color:var(--shadow-color);
+  line-height: var(--mb-2);
+}
 
 /* Skills__container */
 .skills__container{
@@ -356,7 +358,7 @@ h2 {
 .skills__text{
   font-size: var(--content-size);
   margin: var(--mb-3) 0;
-  line-height: var(--mb-2);
+  line-height: var(--mb-3);
 }
 .skills__data{
   width: 14rem;
@@ -497,19 +499,14 @@ color:var(--background-color);
 margin-top: 1rem;
 text-align: center;
 }
-.modal .close{
-  width:2rem;
-  height:2rem;
-  color:var(--text-color-dark);
+.close{
+  color:var(--accent-color);
   display: block;
-  font-size: 2rem;
   z-index: var(--z-fixed);
-  margin-top: var(--mb-1);
-  position: absolute;
-  right: var(--mb-1);
+  margin: 0 var(--mb-1) 0 0;
+  float: right;
 }
-.dim__web::after{
-  content:"";
+.dim__web{
   position:absolute;
   left:0;
   top:0;
@@ -605,9 +602,27 @@ text-align: center;
   border-radius: .5rem;
 }
 /* Modal slide */
-.modal__slide__web{width: 10rem;}
-
-
+.slick-slider{
+  width: 100%; height: 90%; overflow: hidden;}
+.modal__slide__web img{
+  width: 100%; height:100%;}
+.slick-arrow{
+  border:none;
+  background: none;
+  cursor: pointer;
+  position:absolute;
+  top: 46%;
+  z-index: var(--z-tooltip);
+  color:var(--text-color-dark);
+  opacity: 60%;
+}
+.slick-prev{
+  right: var(--mb-1);
+  transform: rotate(-270deg);
+}
+.slick-next{
+ transform: rotate(-90deg);
+}
 
 /* Project__container */
 .project__container{
@@ -621,31 +636,18 @@ text-align: center;
 }
 .project__container > .info__text{
   font-size: var(--content-size);
-  margin: var(--mb-2) 0 var(--mb-5);
+  margin: var(--mb-2) 0 var(--mb-3);
   line-height: var(--mb-2);
 }
-/* Design section */
-.design__title{
-}
-.design{
-  width: 30%;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-/* Slick slider */
-.slide1 img{
-  width: 30rem;
-}
-.slick-arrow{
-  border:none;
-  background: none;
-}
-.slick-prev{
-  background: url(../images/arrow-left.png) no-repeat 0 0;
-}
 
-/* Footer - 질문4: 맨아래 고정방법*/
+
+/* Design section */
+
+/* Design slider */
+.slide1 img{width: 800px; height: 460px; overflow:hidden;}
+.slide2 img{width: 20%;}
+
+/* Footer */
 footer {
   background: var(--main-color);
   position:fixed;
@@ -680,9 +682,7 @@ body .inner {
   width: 26rem;
   margin: var(--mb-1) var(--mb-5) 0;
 }
-.br{
-  display: block;
-}
+
 /* skills__container */
 .skills__container{
   width: 16rem;
@@ -723,9 +723,9 @@ body .inner {
   margin-left: 2rem;
   margin-top:1.5rem;
 }
+}
 /* Modal slide */
 
-}
 /* Design section */
 
 /* for mobile screen */

@@ -37,10 +37,9 @@ $(document).ready(function() {
       $(".background").addClass("dim__web");
       $(".modal__web").show();
     });
-    $(".close").on("click",function(){
+    $(".close").on("click",function(){ /*질문: 밖에 눌러도 꺼지게하기*/
       $(".modal__web").hide();
       $(".background").removeClass("dim__web");
-  
     });
   
 // Modal window - mobile //
@@ -53,14 +52,37 @@ $(document).ready(function() {
       $(".background").removeClass("dim__mob");
   
     });
+  
+// content slider //
+
     
 // Modal slider //
-$('.modal__slide').slick({
-  dots: true,
-  infinite: true,
-  speed: 500,
+  $('.modal__slide__web').slick({
+    variableWidth: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: "<button type='button' class='slick-next xi-caret-up-circle xi-2x'></button>",
+    nextArrow: "<button type='button' class='slick-prev xi-caret-up-circle xi-2x'></button>"
+  });
+
+
+// Design slider //
+   $('.slide1').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
   fade: true,
-  cssEase: 'linear'
+     asNavFor: '.slide2',
+  variableWidth: true
+});
+$('.slide2').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.slide1',
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true,
+    variableWidth: true
 });
 
 // Mobile - Toggle button //
