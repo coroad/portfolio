@@ -214,18 +214,18 @@ h2 {
 
 /* Typing animation */
 .resume::before{
-  content: "#웹디자인 #콘텐츠 #기획";
+  content: "#결자해지! 맡은 일 끝까지!";
   position: absolute;
   top: 3rem;
   left: 0;
   width: fit-content;
-  height: 0.8rem;
-  color: var(--main-color);
+  height: 0.9rem;
+  color: var(--text-color-dark);
   overflow: hidden;
   padding-right: 0;
   font-size: 0.8rem;
   border-right: 1px  solid var(--text-color);
-  animation: typing 7s steps(15) infinite;
+  animation: typing 9s steps(17) infinite;
 }
 
 @keyframes typing {
@@ -352,7 +352,7 @@ h2 {
 
 /* Web & Mobile section */
 /* Web section */
-.web,.web2,.web3{
+.web,.web2,.web3,.web4{
   width: 100%;
   height: 100%;
   position: relative;
@@ -360,10 +360,21 @@ h2 {
 }
 .pc__container{
   width:  60%;
-  background: url(../images/service_use_mainbanr_img.png) no-repeat 50% 30%;
   background-size: contain;
   float: left;
   height: 500px;
+}
+.webthumb1{
+  background: url(../images/portpolio/grazie.png) no-repeat 50% 30%;
+}
+.webthumb2{
+  background: url(../images/portpolio/ediyamain.png) no-repeat 50% 30%;
+}
+.webthumb3{
+  background: url(../images/service_use_mainbanr_img.png) no-repeat 50% 30%;
+}
+.webthumb4{
+  background: url(../images/portpolio/welle.png) no-repeat 50% 30%;
 }
 .web__container > .slick-arrow{
   color:var(--background-color);
@@ -416,10 +427,18 @@ transform: rotate(-90rem);
 }
 .mob__container{
   width: 60%;
-  background: url(../images/mobile.png) no-repeat 50% 30%;
   background-size: contain;
   float: left;
   height: 500px;
+}
+.mobthumb1{
+  background: url(../images/portpolio/kolma.png) no-repeat 50% 30%;
+}
+.mobthumb2{
+  background: url(../images/portpolio/hana.png) no-repeat 50% 30%;
+}
+.mobthumb3{
+  background: url(../images/portpolio/ang.png) no-repeat 50% 30%;
 }
 .mob__all__container .slick-arrow{
   color:var(--background-color);
@@ -525,10 +544,11 @@ transform: rotate(-90rem);
   }
   .click:hover{
     background: var(--background-color);
-    color: #333eff;
+    color: var(--accent-color);
+
   }
   .click:hover a{
-    color: #333eff;
+    color: var(--accent-color);
   }
   .close{
     color:var(--accent-color);
@@ -557,7 +577,7 @@ transform: rotate(-90rem);
   margin:0;
 }
 .project__container > .info__text{
-  font-size: var(--content-size);
+  font-size: var(--medium-size);
   margin: var(--mb-2) 0 var(--mb-3);
   line-height: var(--mb-2);
 }
@@ -816,6 +836,7 @@ right: 0;
   top: 55%;
   text-align: center;
   left: 8%;
+  line-height: 1.2rem;
 }
 .main_page .resume {
   top: 80%;
@@ -878,6 +899,8 @@ right: 0;
   .navbar_menu li:hover a{
     color:var(--background-color);
   }
+  .resume::before{
+  height: 1rem;}
   /* Web section */
   .open__web,.open__mob{
     font-size: var(--subtitle-size);
@@ -981,4 +1004,6 @@ right: 0;
       }
       .open__web,.open__mob{
         font-size: var(--small-size);
+}
+h2{font-size: var(--content-size);}
 }
