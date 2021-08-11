@@ -52,6 +52,16 @@ border-spacing: 0;
 
 
 .clear:after{content:"";display: block;clear: both;}
+select {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+.clear{content:""; display: block;clear:both;}
 
 
 

@@ -8,61 +8,59 @@ $(document).ready(function() {
         anchors: ['section1', 'section2', 'section3', 'section4', 'section5'],
         sectionsColor:['#FBAB7E','#fff','#333eff','#73b99d','#fff']
     });
-
-/*
-// jQuery scroll event - settime //
-		$(function () {
-			var t = 0;
-			setTimeout(function () {
-				$("body, html").animate({ "scrollTop": "0px" }, 300, function () {
-
-					$("#page2").addClass("active");
-					$(window).scroll(function () {
-						t = $(window).scrollTop();
-
-						if (t < $("#page2").offset().top - 100) {
-							$("#page2").addClass("active");
-						}
-						else if (t < $("body, html").height()) {
-							$("#page3").addClass("active");
-						}
-					});
-				});
-			}, 300);
-    });
-    */
+// Move animation Plugin //
+    AOS.init(); 
+// Light slider Plugin //
+  $('#imageGallery').lightSlider({
+      gallery:true,
+      item:1,
+      loop:true,
+      thumbItem:10,
+      slideMargin:0,
+      enableDrag: false,
+      currentPagerPosition:'left',
+      onSliderLoad: function(el) {
+          el.lightGallery({
+              selector: '#imageGallery .lslide'
+          });
+      }   
+  });
 
 // Modal window - web //
     $(".open__web").on("click",function(){
       $(".background").addClass("dim__web");
       $(".modal__web").show();
     });
-    $(".close").on("click",function(){ /*질문: 밖에 눌러도 꺼지게하기*/
+    $(".close").on("click",function(){
       $(".modal__web").hide();
       $(".background").removeClass("dim__web");
     });
   
 // Modal window - mobile //
     $(".open__mob").on("click",function(){
-      $(".background").addClass("dim__mob");
       $(".modal__mob").show();
     });
     $(".close").on("click",function(){
       $(".modal__mob").hide();
-      $(".background").removeClass("dim__mob");
   
     });
   
 // content slider //
+  $('.web__container, .mob__all__container').slick({
+    prevArrow: "<button type='button' class='slick-prev xi-angle-left xi-2x'></button>",
+    nextArrow: "<button type='button' class='slick-next xi-angle-right xi-2x'></button>"
+  });
 
+  
     
 // Modal slider //
-  $('.modal__slide__web').slick({
+  $('.modal__slide__web, .modal__slide__mob').slick({
     variableWidth: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     prevArrow: "<button type='button' class='slick-next xi-caret-up-circle xi-2x'></button>",
-    nextArrow: "<button type='button' class='slick-prev xi-caret-up-circle xi-2x'></button>"
+    nextArrow: "<button type='button' class='slick-prev xi-caret-up-circle xi-2x'></button>",
+    draggable : true
   });
 
 
@@ -73,7 +71,7 @@ $(document).ready(function() {
   arrows: false,
   fade: true,
      asNavFor: '.slide2',
-  variableWidth: true
+     variableWidth: true  
 });
 $('.slide2').slick({
   slidesToShow: 3,
@@ -93,4 +91,11 @@ const menu = document.querySelector('.navbar_menu');
     menu.classList.toggle('active');
     toggleBtn.classList.toggle('active');
   });
+
+// responsive web //
+  const size = window.innerWidth;
+  if (size <= 768) {
+    $("header > .page1").removeClass("inner");
+  };
+
 });
